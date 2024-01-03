@@ -1,0 +1,17 @@
+package main
+
+import (
+	tasks "app/cmd/tasks"
+	app "app/src/ui/console"
+
+	core "github.com/pastusiak/golang/tpl/core_console"
+)
+
+func main() {
+	application := core.NewApp(false)
+
+	application.RegisterCmd(&app.Example{})
+	application.RegisterCmd(&tasks.Example{})
+
+	application.Run()
+}
